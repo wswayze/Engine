@@ -30,8 +30,12 @@
         {
             this.textBoxSymbol = new System.Windows.Forms.TextBox();
             this.labelSymbol = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonLoadQueue = new System.Windows.Forms.Button();
             this.labelStatus = new System.Windows.Forms.Label();
+            this.buttonPurge = new System.Windows.Forms.Button();
+            this.buttonProcessOne = new System.Windows.Forms.Button();
+            this.labelDatabaseRows = new System.Windows.Forms.Label();
+            this.labelQueueRows = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxSymbol
@@ -40,6 +44,7 @@
             this.textBoxSymbol.Name = "textBoxSymbol";
             this.textBoxSymbol.Size = new System.Drawing.Size(100, 20);
             this.textBoxSymbol.TabIndex = 0;
+            this.textBoxSymbol.TextChanged += new System.EventHandler(this.textBoxSymbol_TextChanged);
             // 
             // labelSymbol
             // 
@@ -50,15 +55,15 @@
             this.labelSymbol.TabIndex = 1;
             this.labelSymbol.Text = "Symbol to Process";
             // 
-            // button1
+            // buttonLoadQueue
             // 
-            this.button1.Location = new System.Drawing.Point(23, 227);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Load Queue";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonLoadQueue.Location = new System.Drawing.Point(23, 227);
+            this.buttonLoadQueue.Name = "buttonLoadQueue";
+            this.buttonLoadQueue.Size = new System.Drawing.Size(75, 23);
+            this.buttonLoadQueue.TabIndex = 2;
+            this.buttonLoadQueue.Text = "Load Queue";
+            this.buttonLoadQueue.UseVisualStyleBackColor = true;
+            this.buttonLoadQueue.Click += new System.EventHandler(this.button1_Click);
             // 
             // labelStatus
             // 
@@ -69,13 +74,55 @@
             this.labelStatus.TabIndex = 3;
             this.labelStatus.Text = "Ready";
             // 
+            // buttonPurge
+            // 
+            this.buttonPurge.Location = new System.Drawing.Point(138, 227);
+            this.buttonPurge.Name = "buttonPurge";
+            this.buttonPurge.Size = new System.Drawing.Size(75, 23);
+            this.buttonPurge.TabIndex = 4;
+            this.buttonPurge.Text = "Purge";
+            this.buttonPurge.UseVisualStyleBackColor = true;
+            this.buttonPurge.Click += new System.EventHandler(this.buttonPurge_Click);
+            // 
+            // buttonProcessOne
+            // 
+            this.buttonProcessOne.Location = new System.Drawing.Point(256, 227);
+            this.buttonProcessOne.Name = "buttonProcessOne";
+            this.buttonProcessOne.Size = new System.Drawing.Size(75, 23);
+            this.buttonProcessOne.TabIndex = 5;
+            this.buttonProcessOne.Text = "Process One";
+            this.buttonProcessOne.UseVisualStyleBackColor = true;
+            this.buttonProcessOne.Click += new System.EventHandler(this.buttonProcessOne_Click);
+            // 
+            // labelDatabaseRows
+            // 
+            this.labelDatabaseRows.AutoSize = true;
+            this.labelDatabaseRows.Location = new System.Drawing.Point(295, 75);
+            this.labelDatabaseRows.Name = "labelDatabaseRows";
+            this.labelDatabaseRows.Size = new System.Drawing.Size(83, 13);
+            this.labelDatabaseRows.TabIndex = 6;
+            this.labelDatabaseRows.Text = "Database Rows";
+            // 
+            // labelQueueRows
+            // 
+            this.labelQueueRows.AutoSize = true;
+            this.labelQueueRows.Location = new System.Drawing.Point(298, 104);
+            this.labelQueueRows.Name = "labelQueueRows";
+            this.labelQueueRows.Size = new System.Drawing.Size(69, 13);
+            this.labelQueueRows.TabIndex = 7;
+            this.labelQueueRows.Text = "Queue Rows";
+            // 
             // QueueLoader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(425, 305);
+            this.Controls.Add(this.labelQueueRows);
+            this.Controls.Add(this.labelDatabaseRows);
+            this.Controls.Add(this.buttonProcessOne);
+            this.Controls.Add(this.buttonPurge);
             this.Controls.Add(this.labelStatus);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonLoadQueue);
             this.Controls.Add(this.labelSymbol);
             this.Controls.Add(this.textBoxSymbol);
             this.Name = "QueueLoader";
@@ -89,7 +136,11 @@
 
         private System.Windows.Forms.TextBox textBoxSymbol;
         private System.Windows.Forms.Label labelSymbol;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonLoadQueue;
         private System.Windows.Forms.Label labelStatus;
+        private System.Windows.Forms.Button buttonPurge;
+        private System.Windows.Forms.Button buttonProcessOne;
+        private System.Windows.Forms.Label labelDatabaseRows;
+        private System.Windows.Forms.Label labelQueueRows;
     }
 }
