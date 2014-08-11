@@ -50,7 +50,7 @@ namespace MSMQ
             FrontEndLogic fel = new FrontEndLogic();
             EngineEnums.ValidQueues vq = fel.GetValidQueuesType(textBoxSymbol.Text.ToUpper());
 
-            fel.LoadQueue(connStr, vq);
+            fel.LoadQueueWithEntityActivity(connStr, vq);
             labelStatus.Text = "Load Completed";
 
             ProcessLogic pl = new ProcessLogic();

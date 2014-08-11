@@ -17,7 +17,7 @@ namespace EngineLogicUnitTests
             FrontEndLogic fel = new FrontEndLogic();
             EngineEnums.ValidQueues vq =  fel.GetValidQueuesType("SIRI");
             fel.PurgeQueue(vq);
-            fel.LoadQueue(connStr, vq);
+            fel.LoadQueueWithEntityActivity(connStr, vq);
             ProcessLogic pl = new ProcessLogic();
             int queueRows = pl.GetQueueMessageCount(vq);
             fel.PurgeQueue(vq);
@@ -35,6 +35,19 @@ namespace EngineLogicUnitTests
             EngineEnums.ValidQueues sym = fel.GetValidQueuesType(symbol);
             int dbNumberOfRows = pl.GetTrackingDataRowsForSymbol(connStr, sym);
             Assert.AreEqual(dbNumberOfRows, numberOfExpectedRows, "GetTrackingDataRowsForSymbol failed row count of " + numberOfExpectedRows.ToString());
+        }
+
+        [TestMethod]
+        public void PutTransactionDataOnQueueTest()
+        {
+            ProcessLogic pl = new ProcessLogic();
+            TransactionData td = new TransactionData();
+            td.Symbol = "SIRI";
+            td.Price = 18.875m;
+            td.TradeTimestamp = DateTime.Now;
+            td.Units = 100;
+
+            Assert.IsTrue(pl.PutTransactionDataOnQueue(ref td,EngineEnums.ValidQueues.SIRI));
         }
     }
 }
