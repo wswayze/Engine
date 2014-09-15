@@ -48,7 +48,7 @@ namespace MSMQ
         {
             string connStr = ConfigurationManager.ConnectionStrings["MyDbConn"].ToString();
             FrontEndLogic fel = new FrontEndLogic();
-            EngineEnums.ValidQueues vq = fel.GetValidQueuesType(textBoxSymbol.Text.ToUpper());
+            ValidQueues vq = fel.GetValidQueuesType(textBoxSymbol.Text.ToUpper());
 
             fel.LoadQueueWithEntityActivity(connStr, vq);
             labelStatus.Text = "Load Completed";
@@ -66,7 +66,7 @@ namespace MSMQ
         private void buttonPurge_Click(object sender, EventArgs e)
         {
             FrontEndLogic fel = new FrontEndLogic();
-            EngineEnums.ValidQueues vq = fel.GetValidQueuesType(textBoxSymbol.Text.ToUpper());
+            ValidQueues vq = fel.GetValidQueuesType(textBoxSymbol.Text.ToUpper());
             string queueName = fel.GetQueueName(vq);
             fel.PurgeQueue(vq);
             labelStatus.Text = "Queue Purge Completed";

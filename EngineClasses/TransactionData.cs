@@ -8,7 +8,7 @@ namespace EngineClasses
 {
     public class TransactionData
     {
-        private string symbol;
+        private string ticker;
         private DateTime tradeTimestamp;
         private int units;
         private decimal price;
@@ -20,17 +20,17 @@ namespace EngineClasses
 
         public TransactionData(string Symbol, DateTime TradeTimestamp, int Units, decimal Price)
         {
-            symbol = Symbol;
+            ticker = Symbol;
             tradeTimestamp = TradeTimestamp;
             units = Units;
             price = Price;
 
         }
 
-        public string Symbol
+        public string Ticker
         {
-            get { return symbol; }
-            set { symbol = value; }
+            get { return ticker; }
+            set { ticker = value; }
         }
 
         public DateTime TradeTimestamp

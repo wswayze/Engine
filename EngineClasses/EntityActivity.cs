@@ -11,7 +11,7 @@ namespace EngineClasses
     /// </summary>
     public class EntityActivity
     {
-        protected string identifier = "";
+        protected string ticker = "";
         protected DateTime tradeTimestamp = DateTime.Now;
         protected decimal openPrice = 0m;
         protected decimal closePrice = 0m;
@@ -24,10 +24,10 @@ namespace EngineClasses
         /// <summary>
         /// Identifier is the name, abbreviation, or code of the financial unit.
         /// </summary>
-        public string Identifier
+        public string Ticker
         {
-            get { return identifier; }
-            set { identifier = value; }
+            get { return ticker; }
+            set { ticker = value; }
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace EngineClasses
         public EntityActivity(string ID, DateTime TradeOccurred, decimal OpeningPrice, decimal ClosingPrice,
             decimal HighestPrice, decimal LowestPrice, int TradeUnits)
         {
-            identifier = ID;
+            ticker = ID;
             tradeTimestamp = TradeOccurred;
             openPrice = OpeningPrice;
             closePrice = ClosingPrice;

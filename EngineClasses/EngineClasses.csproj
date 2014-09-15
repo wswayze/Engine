@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\EngineClasses.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -40,12 +41,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EngineEnums.cs" />
+    <Compile Include="Candlestick.cs" />
+    <Compile Include="CandlestickBuilder.cs" />
+    <Compile Include="CandlestickHeader.cs" />
+    <Compile Include="CandlestickMetrics.cs" />
+    <Compile Include="CandlestickPattern.cs" />
+    <Compile Include="CandlestickPatternList.cs" />
+    <Compile Include="CandlestickPeriod.cs" />
     <Compile Include="EngineExceptions.cs" />
     <Compile Include="EntityActivity.cs" />
     <Compile Include="EntityTransaction.cs" />
+    <Compile Include="PatternCategories.cs" />
+    <Compile Include="Patterns.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RealBodyColor.cs" />
+    <Compile Include="TickerItem.cs" />
+    <Compile Include="TickerItemList.cs" />
+    <Compile Include="TickerPurchase.cs" />
+    <Compile Include="TickerSell.cs" />
+    <Compile Include="TickerSellList.cs" />
+    <Compile Include="TickerTransaction.cs" />
+    <Compile Include="TickerTransactionList.cs" />
     <Compile Include="TransactionData.cs" />
+    <Compile Include="Trends.cs" />
+    <Compile Include="ValidQueues.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
